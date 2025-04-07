@@ -38,6 +38,18 @@ files = [
 ]
 
 [[package]]
+name = "pipe-fp"
+version = "1.1.7"
+description = "Functional piping for Python. ➡️"
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "pipe_fp-1.1.7-py3-none-any.whl", hash = "sha256:54723acf366ea7a2edda15a19d96a04253d3bcbceeb2c3729738967b1a2d7d1d"},
+    {file = "pipe_fp-1.1.7.tar.gz", hash = "sha256:93def9ab78156a225a90e3b918afddf012648be581f64b4d42d36d6d03b1d5a8"},
+]
+
+[[package]]
 name = "pluggy"
 version = "1.5.0"
 description = "plugin and hook calling mechanisms for python"
@@ -77,4 +89,4 @@ dev = ["argcomplete", "attrs (>=19.2)", "hypothesis (>=3.56)", "mock", "pygments
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "8ef1d528c82ebf4a734833eed980b6b031e288bf5563655b512f75969b90d60a"
+content-hash = "42267f3b14e7b23409fef1de9b3e65f3d1fec3e2dbd898060b7da2997216758d"
