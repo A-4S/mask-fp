@@ -6,9 +6,10 @@ from typing import Any, Iterable, Literal
 from pipe_fp import pipe
 
 from .library import merge_annotations, set_return_annotations
+from .type.types import P, T
 
 
-def mask[**P](
+def mask(
     wrapped: Callable[P, Any],
     assigned: Iterable[
         Literal[
@@ -26,9 +27,9 @@ def mask[**P](
     mask docstring 📄
     """
 
-    def outer_wrapper[R](wrapper: Callable[..., R]) -> Callable[P, R]:
+    def outer_wrapper(wrapper: Callable[..., T]) -> Callable[P, T]:
         @wraps(wrapped, assigned, updated)
-        def inner_wrapper(*args: P.args, **kwargs: P.kwargs) -> R:
+        def inner_wrapper(*args: P.args, **kwargs: P.kwargs) -> T:
             def bind_partial(s: Signature):
                 return s.bind_partial(*args, **kwargs)
 
