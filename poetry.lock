@@ -39,14 +39,14 @@ files = [
 
 [[package]]
 name = "pipe-fp"
-version = "1.1.7"
+version = "2.0.0"
 description = "Functional piping for Python. ➡️"
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "pipe_fp-1.1.7-py3-none-any.whl", hash = "sha256:54723acf366ea7a2edda15a19d96a04253d3bcbceeb2c3729738967b1a2d7d1d"},
-    {file = "pipe_fp-1.1.7.tar.gz", hash = "sha256:93def9ab78156a225a90e3b918afddf012648be581f64b4d42d36d6d03b1d5a8"},
+    {file = "pipe_fp-2.0.0-py3-none-any.whl", hash = "sha256:4e1eee653077d6ff442dfc4b7aecf503edb0ba33a199785d7ab3414531e3b2eb"},
+    {file = "pipe_fp-2.0.0.tar.gz", hash = "sha256:d635517352022d5601af88db4b51059b1cfa5f7cb3cbaaae508c4a38a8dca45b"},
 ]
 
 [[package]]
@@ -117,4 +117,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "c3e75135ffdc931b61fd255c939bf9295d712bf19374e451ff383aa8114cb06b"
+content-hash = "226fd06887fed9f702f17df06b8447d03b8110e30aa2b049fca0ec6b81509247"
