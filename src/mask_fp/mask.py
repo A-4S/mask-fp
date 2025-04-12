@@ -1,6 +1,7 @@
+from collections.abc import Callable
 from functools import WRAPPER_ASSIGNMENTS, WRAPPER_UPDATES, wraps
 from inspect import BoundArguments, Signature, signature
-from typing import Any, Callable, Iterable, Literal
+from typing import Any, Iterable, Literal
 
 from pipe_fp import pipe
 

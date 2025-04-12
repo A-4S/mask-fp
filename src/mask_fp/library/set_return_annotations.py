@@ -1,6 +1,6 @@
+from collections.abc import Callable
 from functools import reduce
 from inspect import Signature
-from typing import Callable
 
 from pipe_fp import pipe
 
