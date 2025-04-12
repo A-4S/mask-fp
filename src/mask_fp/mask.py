@@ -40,7 +40,7 @@ def mask[**P](
 
             return pipe(signature, bind_partial, apply_defaults, callback)(wrapped)
 
-        return pipe(
+        return pipe[tuple[Callable, Callable]](
             lambda fs: [signature(f) for f in fs],
             lambda signatures: merge_annotations(*signatures),
             lambda merged_s: set_return_annotations(inner_wrapper, merged_s),
