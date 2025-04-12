@@ -27,6 +27,8 @@ jobs:
         pipx ensurepath
         pipx install poetry
         poetry install
+    - name: Run linter
+      run: ruff check --output-format=github .
     - name: Test with pytest
       run: |
         eval `poetry env activate`
