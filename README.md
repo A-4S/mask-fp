@@ -58,14 +58,14 @@ def wrapped(a: int, /, b: int = 2, *, c: int = 3) -> tuple[int, int, int]:
 
 **Without using default values**
 ```python
->>> wrapped(1, 2, c=3)
+>>> print(wrapped(1, 2, c=3))
 Sum of (1, 2, 3) is 6. 🎓
 (1, 2, 3)
 ```
 
 **Using default values**
 ```python
->>> wrapped(1)
+>>> print(wrapped(1))
 Sum of (1, 2, 3) is 6. 🎓
 (1, 2, 3)
 ```
