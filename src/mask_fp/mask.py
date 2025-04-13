@@ -1,16 +1,16 @@
 from collections.abc import Callable
 from functools import WRAPPER_ASSIGNMENTS, WRAPPER_UPDATES, wraps
 from inspect import BoundArguments, Signature, signature
-from typing import Any, Iterable, Literal
+from typing import Iterable, Literal
 
 from pipe_fp import pipe
 
-from .library import merge_annotations, set_return_annotations
-from .type.types import P, T
+from .library import merge_signatures, set_return_annotations
+from .type.types import Masked, P, T, Wrapped, Wrapper
 
 
 def mask(
-    wrapped: Callable[P, Any],
+    wrapped: Wrapped[P],
     assigned: Iterable[
         Literal[
             "__module__",
@@ -27,7 +27,7 @@ def mask(
     mask docstring 📄
     """
 
-    def outer_wrapper(wrapper: Callable[..., T]) -> Callable[P, T]:
+    def outer_wrapper(wrapper: Wrapper[T]) -> Masked[P, T]:
         @wraps(wrapped, assigned, updated)
         def inner_wrapper(*args: P.args, **kwargs: P.kwargs) -> T:
             def bind_partial(s: Signature):
@@ -41,10 +41,10 @@ def mask(
 
             return pipe(signature, bind_partial, apply_defaults, callback)(wrapped)
 
-        return pipe[tuple[Callable, Callable]](
+        return pipe[Iterable[Callable]](
             lambda fs: [signature(f) for f in fs],
-            lambda signatures: merge_annotations(*signatures),
-            lambda merged_s: set_return_annotations(inner_wrapper, merged_s),
+            lambda ss: merge_signatures(*ss),
+            lambda masked_s: set_return_annotations(inner_wrapper, masked_s)
         )((wrapped, wrapper)) or inner_wrapper
 
     return outer_wrapper
