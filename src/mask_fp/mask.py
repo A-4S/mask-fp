@@ -24,7 +24,46 @@ def mask(
     updated: Iterable[Literal["__dict__"]] = WRAPPER_UPDATES,
 ):
     """
-    mask docstring 📄
+    ## Description
+    Allows for quick creation of *wrapper* function look-alikes by placing
+    the mask *decorator* over target *wrapper* functions and calling it
+    along with the desired target *wrapped* function. Furthermore, the
+    *mask* function will preserve type hinting, signatures, annotations,
+    and the application of default arg and kwarg values, for an enhanced
+    developer experience and potentially advanced use cases.
+
+    ## Example
+    .. code-block:: python
+        def sum_all(a: int, /, b: int=2, *, c: int=3) -> int:
+        print('Calculating sum at sum_all! ✖️')
+        return a + b + c
+
+        @mask(sum_all)
+        def wrapper_A(*args, **kwargs):
+            print('Hello from wrapper_A! 👋')
+            return sum_all(*args, **kwargs)
+
+        @mask(sum_all)
+        def wrapper_B(*args, **kwargs):
+            print('Hello from wrapper_B! 👋')
+            return (args, kwargs)
+
+    **Without using default values**
+    >>> wrapper_A(1, 2, c=3)
+    Hello from wrapper_A! 👋
+    Calculating sum at sum_all! ✖️
+    6
+
+    **Using default values**
+    >>> wrapper_A(1)
+    Hello from wrapper_A! 👋
+    Calculating sum at sum_all! ✖️
+    6
+
+    **Custom logic**
+    >>> wrapper_B(1, 2, c=3)
+    Hello from wrapper_B! 👋
+    ((1, 2), {'c': 3})
     """
 
     def outer_wrapper(wrapper: Wrapper[T]) -> Masked[P, T]:
