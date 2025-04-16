@@ -1,12 +1,12 @@
 from inspect import signature
 from typing import Any
 
-from mask_fp import mask
+from masks_fp import masks
 
 from .library import demo_func
 
 
-@mask(demo_func, assigned=('__doc__',))
+@masks(demo_func, assigned=('__doc__',))
 def wrapper(*args, **kwargs) -> tuple[tuple, dict[str, Any]]:
     '''
     From ``wrapper`` ``docstring``. 👋

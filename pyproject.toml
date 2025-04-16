@@ -1,7 +1,7 @@
 [project]
-name = "mask-fp"
+name = "masks-fp"
 version = "1.0.0"
-description = "Mask fp is a powerful wrapping tool that preserves meta and anatomical information. 🎭"
+description = "Masks fp is a powerful wrapping tool that preserves meta and anatomical information. 🎭"
 license = "MIT"
 authors = [
     {name = "A-4S",email = "dev.forsythe@gmail.com"}
@@ -20,7 +20,7 @@ dependencies = [
 ]
 
 [tool.poetry]
-packages = [{include = "mask_fp", from = "src"}]
+packages = [{include = "masks_fp", from = "src"}]
 
 
 [tool.poetry.group.dev.dependencies]

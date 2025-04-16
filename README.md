@@ -1,4 +1,4 @@
-# 🎭 Mask fp
+# 🎭 Masks fp
 
 ### Functional wrapping for Python.
 Advanced ⬦ Powerful ⬦ Tooling
@@ -10,7 +10,7 @@ Advanced ⬦ Powerful ⬦ Tooling
 Wrapping is a technique targeting function extensibility, taking metadata of one function and merging it with another, including any intended additional functionality, forming a new function.
 
 ## Usage
-Mask fp is a powerful tool made for wrapping functions and is built on top of the `functools.wraps` function. The `mask` function allows for quick creation of *wrapper* function look-alikes by placing the mask *decorator* over target *wrapper* functions and calling it along with the desired target *wrapped* function. Furthermore, the *mask* function will preserve type hinting, signatures, annotations, and the application of default arg and kwarg values, for an enhanced developer experience and potentially advanced use cases.
+Mask fp is a powerful tool made for wrapping functions and is built on top of the `functools.wraps` function. The `masks` function allows for quick creation of *wrapper* function look-alikes by placing the `masks` *decorator* over target *wrapper* functions and calling it along with the desired target *wrapped* function. Furthermore, the `masks` function will preserve type hinting, signatures, annotations, and the application of default arg and kwarg values, for an enhanced developer experience and potentially advanced use cases.
 
 ## Features
 - Automatic application of default arguments during calls, just as it would originally.
@@ -32,11 +32,11 @@ poetry add mask-fp
 ```python
 from collections.abc import Callable, Iterable
 
-from mask_fp import mask
+from mask_fp import masks
 
 
 def decorator(f: Callable[..., Iterable[int]]) -> Callable:
-    @mask(f)
+    @masks(f)
     def wrapper(*args, **kwargs) -> dict[str, int | Iterable[int]]:
         """
         From ``wrapper`` ``docstring``. 👋

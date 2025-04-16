@@ -9,7 +9,7 @@ from .library import merge_signatures, set_return_annotations
 from .type.types import Masked, P, T, Wrapped, Wrapper
 
 
-def mask(
+def masks(
     wrapped: Wrapped[P],
     assigned: Iterable[
         Literal[
@@ -26,9 +26,9 @@ def mask(
     """
     ## Description
     Allows for quick creation of *wrapper* function look-alikes by placing
-    the mask *decorator* over target *wrapper* functions and calling it
+    the masks *decorator* over target *wrapper* functions and calling it
     along with the desired target *wrapped* function. Furthermore, the
-    *mask* function will preserve type hinting, signatures, annotations,
+    *masks* function will preserve type hinting, signatures, annotations,
     and the application of default arg and kwarg values, for an enhanced
     developer experience and potentially advanced use cases.
 
@@ -38,12 +38,12 @@ def mask(
         print('Calculating sum at sum_all! ✖️')
         return a + b + c
 
-        @mask(sum_all)
+        @masks(sum_all)
         def wrapper_A(*args, **kwargs):
             print('Hello from wrapper_A! 👋')
             return sum_all(*args, **kwargs)
 
-        @mask(sum_all)
+        @masks(sum_all)
         def wrapper_B(*args, **kwargs):
             print('Hello from wrapper_B! 👋')
             return (args, kwargs)
