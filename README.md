@@ -3,7 +3,7 @@
 ### Functional wrapping for Python.
 Advanced ⬦ Powerful ⬦ Tooling
 
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/A-4S/mask-fp/python-app.yml?logo=github&label=CI&style=for-the-badge)](https://github.com/A-4S/mask-fp/actions/workflows/python-app.yml) [![PyPI - Version](https://img.shields.io/pypi/v/mask-fp?style=for-the-badge)](https://pypi.org/project/mask-fp/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mask-fp?style=for-the-badge)](https://pypi.org/project/mask-fp/)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/A-4S/masks-fp/python-app.yml?logo=github&label=CI&style=for-the-badge)](https://github.com/A-4S/masks-fp/actions/workflows/python-app.yml) [![PyPI - Version](https://img.shields.io/pypi/v/masks-fp?style=for-the-badge)](https://pypi.org/project/masks-fp/) [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/masks-fp?style=for-the-badge)](https://pypi.org/project/masks-fp/)
 
 ---
 ## Background
@@ -20,12 +20,12 @@ Mask fp is a powerful tool made for wrapping functions and is built on top of th
 ## Install
 Using pip
 ```sh
-pip install mask-fp
+pip install masks-fp
 ```
 
 Or using Poetry
 ```sh
-poetry add mask-fp
+poetry add masks-fp
 ```
 
 ## Example
