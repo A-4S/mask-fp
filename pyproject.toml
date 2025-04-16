@@ -1,7 +1,7 @@
 [project]
 name = "mask-fp"
 version = "1.0.0"
-description = ""
+description = "Mask fp is a powerful wrapping tool that preserves meta and anatomical information. 🎭"
 license = "MIT"
 authors = [
     {name = "A-4S",email = "dev.forsythe@gmail.com"}
